@@ -46,6 +46,8 @@ Lancez le serveur backend :
 
 ```bash
 npm start
+#or
+node server.js
 ```
 ## Frontend
 
@@ -59,7 +61,7 @@ npm install
 ```
 Lancez l'application frontend :
 ```bash
-npm run serve
+npm run dev
 ```
 ## Remerciments
 
