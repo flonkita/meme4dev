@@ -20,43 +20,47 @@ Ce projet est une application web pour la création et le partage de memes. Elle
 Pour installer et exécuter ce projet localement, suivez ces étapes :
 
 ### Cloner le dépôt
-
+```bash
 git clone https://github.com/votre-utilisateur/memes4dev.git
 cd memes4dev 
-
+```
 ## Backend
 
 Naviguez dans le répertoire backend :
-
+```bash
 cd backend
-
+```
 Installez les dépendances :
-
+```bash
 npm install
-
+```
 
 ## Configurez l'environnement du backend :
 Créez un fichier .env dans le dossier backend et configurez vos variables d'environnement (par exemple, la chaîne de connexion à la base de données).
 
 DB_CONNECTION_STRING=your-mongodb-connection-string
+
 JWT_SECRET=your-jwt-secret
+
 Lancez le serveur backend :
 
+```bash
 npm start
-
+```
 ## Frontend
 
 Dans un autre terminal, naviguez dans le répertoire frontend :
-
+```bash
 cd ../frontend
-
+```
 Installez les dépendances :
+```bash
 npm install
-
+```
 Lancez l'application frontend :
-
+```bash
 npm run serve
-
+```
 ## Remerciments
 
 Merci à mon partenaire dans le crime Olivier Loorius pour ce travail énorme sur la partie front de ce projet où on a pu se trouver et se complèter pour faire ce travail et à Thibaud D'Arros pour ce mini-projet !
