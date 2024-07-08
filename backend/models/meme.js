@@ -1,7 +1,17 @@
 const mongoose = require("mongoose");
 
-const memeSchema = new mongoose.Schema({
-  imagePath: String,
+const MemeSchema = new mongoose.Schema({
+  imagePath: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  textTop: String,
+  textMiddle: String,
+  textBottom: String,
 });
 
-module.exports = mongoose.model("Meme", memeSchema);
+module.exports = mongoose.model("Meme", MemeSchema);

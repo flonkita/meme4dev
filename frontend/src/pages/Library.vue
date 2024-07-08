@@ -11,6 +11,7 @@
       <div class="meme-container">
         <div class="row">
           <MemeCard v-for="meme in displayedMemes" :key="meme.id" :meme="meme" class="col-md-4 col-sm-6 col-12 mb-4 d-flex justify-content-center" />
+          <button @click="deleteMeme(meme.id)">Supprimer</button>
         </div>
         <div class="d-flex justify-content-center mt-4 mb-4">
           <button class="btn btn-primary load-more me-2" @click="loadMoreMemes">Voir plus</button>
@@ -21,6 +22,7 @@
   </template>
   
   <script>
+  import axios from 'axios';
   import MemeCard from '../components/MemeCard.vue';
   
   export default {
@@ -76,7 +78,18 @@
           top: 0,
           behavior: 'smooth'
         });
-      }
+      },
+      deleteMeme(id) {
+      axios
+        .delete(`http://localhost:3000/memes/${id}`) // Utilisez l'URL de votre API
+        .then(() => {
+          // Mettre à jour la liste des memes après la suppression
+          this.memes = this.memes.filter(meme => meme.id !== id);
+        })
+        .catch((error) => {
+          console.error("There was an error deleting the meme:", error);
+        });
+    },
     }
   }
   </script>
