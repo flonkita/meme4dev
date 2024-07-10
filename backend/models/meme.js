@@ -14,4 +14,23 @@ const MemeSchema = new mongoose.Schema({
   textBottom: String,
 });
 
-module.exports = mongoose.model("Meme", MemeSchema);
+const Meme = mongoose.model("Meme", MemeSchema);
+
+async function createMeme(imagePath, textTop, textMiddle, textBottom) {
+  const newMeme = new Meme({
+    imagePath,
+    textTop,
+    textMiddle,
+    textBottom,
+  });
+
+  try {
+    const savedMeme = await newMeme.save();
+    console.log("Meme saved successfully:", savedMeme);
+  } catch (error) {
+    console.error("Error saving meme:", error);
+  }
+}
+// createMeme("zerferf","retvrtv","rtvrtv","rgtvrtv");
+
+module.exports = { Meme, createMeme };

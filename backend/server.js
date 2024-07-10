@@ -13,9 +13,9 @@ connectDB();
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use("/uploads", express.static("uploads"));
+app.use('/uploads', express.static('uploads'));
 
-app.use("/api", memeRoutes);
+app.use("/api/memes", memeRoutes);
 app.use("/authenticate", authRoutes);
 
 app.listen(port, () => {
